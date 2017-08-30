@@ -2,7 +2,7 @@
 
 [](dependency)
 ```clojure
-[cljsjs/react-bootstrap "0.31.0-0"] ;; latest release
+[org.clojars.jenny.cljsjs/react-bootstrap "0.31.2-0"] ;; latest release
 ```
 [](/dependency)
 

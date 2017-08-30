@@ -5,11 +5,11 @@
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def +lib-version+ "1.1.0")
-(def +version+ (str +lib-version+ "-0"))
+(def +lib-version+ "1.1.3")
+(def +version+ (str +lib-version+ "-2"))
 
 (task-options!
- pom  {:project     'cljsjs/react-input-autosize
+ pom  {:project     'org.clojars.jenny.cljsjs/react-input-autosize
        :version     +version+
        :description "Auto-resizing input field for React"
        :url         "http://jedwatson.github.io/react-input-autosize/"
@@ -23,8 +23,8 @@
 
 (deftask package []
   (comp
-    (download :url (str "https://github.com/JedWatson/react-input-autosize/archive/v" +lib-version+ ".zip")
-              :checksum "077F6B2F6E8CA80BC6E03A5CCA1438EB"
+   (download :url (str "https://github.com/jennydickinson/react-input-autosize/archive/master.zip")
+             :checksum "E648482FEE5A9D23A74F9C7B63E08C36"
               :unzip true)
 
     (sift :move {#"^react-input-autosize.*[/ \\]dist[/ \\]react-input-autosize.js$" "cljsjs/react-input-autosize/development/react-input-autosize.inc.js"

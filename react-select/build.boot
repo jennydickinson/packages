@@ -4,14 +4,15 @@
                   [cljsjs/react "15.0.0-0"]
                   [cljsjs/react-dom "15.0.0-0"]
                   [cljsjs/classnames "2.2.3-0"]
-                  [cljsjs/react-input-autosize "1.1.0-0"]])
+                  [org.clojars.jenny.cljsjs/react-input-autosize "1.1.3-2"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def +version+ "1.0.0-rc.3")
+(def +lib-version+ "1.0.0-rc.3")
+(def +version+ (str +lib-version+ "-1"))
 
 (task-options!
- pom  {:project     'cljsjs/react-select
+ pom  {:project     'org.clojars.jenny.cljsjs/react-select
        :version     +version+
        :description "A flexible and beautiful Select Input control for ReactJS with multiselect, autocomplete and ajax support."
        :url         "http://jedwatson.github.io/react-select/"
@@ -25,8 +26,8 @@
 
 (deftask package []
   (comp
-   (download :url (str "https://github.com/JedWatson/react-select/archive/v" +version+ ".zip")
-             :checksum "651ddcd58b0668313fc59e4c1e4d9e3c"
+   (download :url (str "https://github.com/jennydickinson/react-select/archive/master.zip")
+             :checksum "0947B40B1325951237A0CC210C4C4643"
              :unzip true)
 
    (sift :move {#"^react-select.*[/ \\]dist[/ \\]react-select.js$" "cljsjs/react-select/development/react-select.inc.js"
